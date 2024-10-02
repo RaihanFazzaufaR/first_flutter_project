@@ -97,4 +97,33 @@ Hasil:
 
 !['step11_run'](laporan/picture/step11_run.png)
 
+# Langkah 12
+Menambah button baru untuk dapat memberikan like.
+
+!['step12_1](laporan/picture/step12_1.png)
+
+!['step12_2'](laporan/picture/step12_2.png)
+
+Hasil :
+
+!['step12_run'](laporan/picture/step12_run.png)
+
+# Langkah 13
+Membuat sidebar dengan menggunakan widget NavigationRail()
+
+!['step_13'](laporan/picture/step13.png)
+
+Hasil:
+
+!['step13_run'](laporan/picture/step13_run.png)
+
+# Langkah 14
+Membuat variabel selectedIndex untuk indexing halaman serta menambahkan responsive pada sidebar menggunakan extended (true)
+
+!['step14'](laporan/picture/step14.png)
+
+# Langkah 15
+Membuat halaman baru (halaman favorite) untuk menyimpan data yang di-like.
+
+!['step15'](laporan/picture/step15.png)
 
