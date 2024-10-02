@@ -121,34 +121,48 @@ class GeneratorPage extends StatelessWidget {
     } else {
       icon = Icons.favorite_border;
     }
-
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          BigCard(pair: pair),
-          SizedBox(height: 10),
-          Row(
-            mainAxisSize: MainAxisSize.min,
+    
+    return Stack(
+      children: [
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton.icon(
-                onPressed: () {
-                  appState.toggleFavorite();
-                },
-                icon: Icon(icon),
-                label: Text('Like'),
-              ),
-              SizedBox(width: 10),
-              ElevatedButton(
-                onPressed: () {
-                  appState.getNext();
-                },
-                child: Text('Next'),
+              BigCard(pair: pair),
+              SizedBox(height: 10),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      appState.toggleFavorite();
+                    },
+                    icon: Icon(icon),
+                    label: Text('Like'),
+                  ),
+                  SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      appState.getNext();
+                    },
+                    child: Text('Next'),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        ),
+        Positioned(
+          top: 25,
+          right: 25,
+          child: Card(
+            elevation: 4, 
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text('Raihan Fazzaufa Rasendriya - 2241720201'),
+          )),
+        ),
+      ],
     );
   }
 }
@@ -192,18 +206,33 @@ class FavoritesPage extends StatelessWidget {
       );
     }
 
-    return ListView(
+    return Stack(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Text('You have '
-              '${appState.favorites.length} favorites:'),
-        ),
-        for (var pair in appState.favorites)
-          ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text(pair.asLowerCase),
+        Positioned(
+          top: 25,
+          right: 25,
+          child: Card(
+            elevation: 4,
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text('Raihan Fazzaufa Rasendriya - 2241720201'),
+            ),
           ),
+        ),
+        ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text('You have '
+                  '${appState.favorites.length} favorites:'),
+            ),
+            for (var pair in appState.favorites)
+              ListTile(
+                leading: Icon(Icons.favorite),
+                title: Text(pair.asLowerCase),
+              ),
+          ],
+        ),
       ],
     );
   }
